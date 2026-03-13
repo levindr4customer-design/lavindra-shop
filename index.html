@@ -5482,7 +5482,7 @@ ul {
     <input type="hidden" name="Total_Price" id="totalPrice">
 
     <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-block mt-4">
-        <i class="fab fa-whatsapp"></i> Place Order
+        <i class="fas fa-envelope"></i> Place Order
     </button>
 </form>
                     </div>
@@ -7018,27 +7018,22 @@ if (checkoutForm) {
                 const modal = document.getElementById('orderSuccessModal');
                 if (overlay) overlay.classList.add('active');
                 if (modal) modal.classList.add('active');
-
-                // Also open WhatsApp
-                const encodedMessage = encodeURIComponent(orderDetails);
-                const whatsappURL = `https://wa.me/94789647790?text=${encodedMessage}`;
-                window.open(whatsappURL, '_blank');
                 
                 cart = [];
                 localStorage.removeItem('levindra_cart');
                 updateCartUI();
                 form.reset();
             } else {
-                alert('There was an error submitting your order. Please try again or contact us directly via WhatsApp.');
+                alert('There was an error submitting your order. Please try again.');
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('There was an error submitting your order. Please try again or contact us directly via WhatsApp.');
+            alert('There was an error submitting your order. Please try again.');
         }
         
         if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Place Order';
+            submitBtn.innerHTML = '<i class="fas fa-envelope"></i> Place Order';
         }
     });
 }
