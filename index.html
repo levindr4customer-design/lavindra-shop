@@ -6137,17 +6137,14 @@ ul {
         </div>
     </div>
 
-    <script>
+<script>
         /* ==========================================
    LEVINDRA E-COMMERCE - JavaScript
    Single Page Application Logic
    ========================================== */
-
-// ===== Product Data =====
-// ===== Product Data =====
-const products = [
+   const products = [
     // SHOES
-    { id: 1, name: "Classic School Shoes - Black", category: "shoes", subcategory: "school-shoes", price: 3500, originalPrice: 4200, image: "PE0436-1.jpg", rating: 4.5, reviews: 128, badge: "hot", description: "Durable black school shoes with comfortable cushioning. Perfect for everyday school wear. Made with premium leather and anti-slip sole.", inStock: true, isNew: false },
+    { id: 1, name: "Classic School Shoes - Black", category: "shoes", subcategory: "school-shoes", price: 3500, originalPrice: 4200, image: "PE0436-1.jpg", rating: 4.5, reviews: 128, badge: "hot", description: "Durable black school shoes with comfortable cushioning. Perfect for everyday school wear. Made with premium leather and anti-slip sole.", inStock: false, isNew: false },
     { id: 2, name: "School Shoes - White", category: "shoes", subcategory: "school-shoes", price: 3200, originalPrice: 3800, image: "whitesc.jpg", rating: 4.3, reviews: 95, badge: "sale", description: "Comfortable white school shoes with breathable lining. Ideal for long school days.", inStock: true, isNew: false },
     { id: 3, name: "Men's Casual Leather Shoes", category: "shoes", subcategory: "mens-shoes", price: 5500, originalPrice: 7000, image: "lather.jpg", rating: 4.7, reviews: 67, badge: "sale", description: "Premium men's casual leather shoes. Stylish and comfortable for office and casual wear.", inStock: true, isNew: false },
     {
@@ -6716,6 +6713,73 @@ const products = [
     inStock: true, 
     isNew: false 
 },
+{ 
+    id: 68, 
+    name: "Derma Roller - DRS", 
+    category: "beauty-accessories", 
+    subcategory: "men", 
+    price: 1800, 
+    originalPrice: 2300, 
+    image: ["roller.jpeg","roller 01.jpeg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: "Derma Roller System 540 needles with Titianim alloy Needles. Features & details Stimulates skin regeneration Reduces stretch marks & cellulite Reduces hyper-pigmentation Removes very deep wrinkles and reduces acne scars Improves the absorption & effectiveness of skin care products Stimulate the collagen production. Improve elasticity of skin. Promote skin rejuvenation Promote blood circulation and grow your hair & beard.Attentions- Do not force the roller into the skin but simply use mild pressure.- Roll obliquely at the same intensity covering the same areas in both directions (vertically and horizontally).- The roller cannot be overused as the needles will remain sharp for a prolonged time.- Not suitable for use onto the following skin conditions: active acne, eczema, rosacea, peonasis, servere solar karatosis and raised moles or warts.- Keep out of reach of children.........",
+    inStock: true,
+    isNew: false 
+},
+{ 
+    id: 69, 
+    name: "5 Pcs Travel Makeup Brush With Mirror", 
+    category: "beauty-accessories", 
+    subcategory: "women", 
+    price: 850, 
+    originalPrice: 950, 
+    image: ["makeup.jpeg","maakeup 01.jpeg","makeup 03.jpeg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: " Suitable for women and girls: these compact makeup brushes will make a lot of difference for your daily facial makeup, suitable for most women and girls, whether you are beauty beginners or makeup artists. And it will be a unique and ideal gift for any of your family member or friends. Easy to hold and use: Cute small makeup brushes equipped with a shiny smooth surface handle, which are made of ABS material, comfortable grip, looks stylish and is easy to operate. Skin friendly material: Our mini facial cosmetic makeup brush set are made of synthetic fiber, delicate, soft and comfortable feel, fast drying and not prone to caking. Safe without stinging or irritating the skin. Lightweight and portable: This is a great travel size brush set and fits easy in a tiny makeup bag to carry on. This easy-taken makeup brush set weighs 0.34 lbs and the box size is 5.7x3.5'x 0.9', making it lightweight and portable for travel and work. Complete functions: 5 essential cosmetic brushes in a small case,includes etail brush, nose shadow brush, loose powder brush, eye shadow brush, smudge brush. And the storage case is so practical with the mirror inside, all is enough to help achieve a full-face look.......",
+    inStock: true,
+    isNew: false 
+},
+{ 
+    id: 70, 
+    name: "10 Pcs Makeup Brush With Pouch", 
+    category: "beauty-accessories", 
+    subcategory: "women", 
+    price: 850, 
+    originalPrice: 950, 
+    image: ["mb 01.jpeg","mb 02.jpeg","mb 03.jpeg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: "Skin Type: Normal /Product Benefits: Portable /Bristle Material: Synthetic Fibers /Recommended Uses For Product: For Blending /Color: Pink /Item Form: Angled/Rounded (Contour), Flat/Angled (Foundation), Round/Dome (Eyeshadow), Rounded/Oval (Blush)....",
+    inStock: true,
+    isNew: false 
+},
+{ 
+    id: 71, 
+    name: "pre school and grade(01,02,03)(boys / girls)",
+    category: "bags", 
+    subcategory: "pre-school-bags", 
+    price: 1800, 
+    originalPrice: 1950, 
+    image: ["pre school bag.jpg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: "This waterproof school bag is perfect for preschool and grade 01 and 02 students. The cartoon design is suitable for both boys and girls, making it a cute and fun accessory for your child. Made from high-quality materials, this backpack is durable and can withstand daily wear and tear. It features a spacious main compartment and adjustable shoulder straps for a comfortable fit. This bag is the best gift for 4-5-year-olds and is perfect for carrying books, snacks, and other essentials. Whether it's for school or travel, this backpack is a great choice for your little one.",
+    inStock: true,
+    isNew: false,
+    sizes: [
+        { name: "Pre School", price: 1500 },
+        { name: "Grade 01", price: 1800 },
+        { name: "Grade 02", price: 1800 },
+        { name: "Grade 03", price: 1800 }
+    ]
+},
+
 
 
 
@@ -6824,7 +6888,6 @@ const categoryData = {
     },
     
 };
-
 // ===== State =====
 let cart = JSON.parse(localStorage.getItem('levindra_cart')) || [];
 let wishlist = JSON.parse(localStorage.getItem('levindra_wishlist')) || [];
@@ -6972,7 +7035,7 @@ if (checkoutForm) {
         orderDetails += `*🚛 Delivery Details:*\n`;
         orderDetails += `Address: ${address}\n`;
         orderDetails += `City: ${city}\n`;
-        orderDetails += `Delivery Fee: Rs. 450\n\n`;
+        orderDetails += `Delivery Fee: Rs. 400\n\n`;
         orderDetails += `*🛒 Order Items:*\n`;
         
         if (cart.length > 0) {
@@ -7255,7 +7318,8 @@ function updateCartUI() {
         cart.forEach(item => {
             const product = products.find(p => p.id === item.id);
             if (product) {
-                const itemTotal = product.price * item.qty;
+                const itemPrice = item.price || product.price;
+                const itemTotal = itemPrice * item.qty;
                 subtotal += itemTotal;
                 itemCount += item.qty;
                 const imgUrl = Array.isArray(product.image) ? product.image[0] : product.image;
@@ -7265,7 +7329,7 @@ function updateCartUI() {
                         <div class="cart-item-image"><img src="${imgUrl}" alt="${product.name}" style="width:100%; height:100%; object-fit:cover;"></div>
                         <div class="cart-item-info">
                             <div class="cart-item-name">${product.name}</div>
-                            <div class="cart-item-price">Rs. ${product.price.toLocaleString()}</div>
+                            <div class="cart-item-price">Rs. ${itemPrice.toLocaleString()}</div>
                             <div class="cart-item-qty">
                                 <button class="qty-btn" onclick="updateCartQty(${product.id}, -1)">-</button>
                                 <span>${item.qty}</span>
@@ -7277,11 +7341,12 @@ function updateCartUI() {
                 `;
 
                 let colorText = item.color ? ` [Color: ${item.color}]` : '';
+                let sizeText = item.size ? ` (Size: ${item.size})` : '';
                 checkoutHTML += `
                     <div class="checkout-item">
                         <div class="checkout-item-image"><img src="${imgUrl}" alt="${product.name}" style="width:100%; height:100%; object-fit:cover;"></div>
                         <div class="checkout-item-info">
-                            <div class="checkout-item-name">${product.name}${colorText}</div>
+                            <div class="checkout-item-name">${product.name}${colorText}${sizeText}</div>
                             <div class="checkout-item-qty">Qty: ${item.qty}</div>
                         </div>
                         <div class="checkout-item-price">Rs. ${itemTotal.toLocaleString()}</div>
@@ -7297,7 +7362,7 @@ function updateCartUI() {
     document.querySelectorAll('.cart-count').forEach(el => el.textContent = itemCount);
     
     // --- SHIPPING CALCULATION ---
-    let shippingFee = cart.length > 0 ? 450 : 0; // Cart එකේ බඩු තියෙනවා නම් රු.450 යි
+    let shippingFee = cart.length > 0 ? 400 : 0; // Cart එකේ බඩු තියෙනවා නම් රු.400 යි
     let finalTotal = subtotal + shippingFee;
 
     const subtotalString = 'Rs. ' + subtotal.toLocaleString();
@@ -7709,6 +7774,7 @@ function initForms() {
 // ===== Product Details Page Function =====
 // තෝරපු Color එක මතක තියාගන්න Variable එකක්
 let currentSelectedColor = null;
+let currentSelectedSize = null;
 
 // Color එක click කරාම වෙනස් කරන Function එක
 function selectColor(element, colorName) {
@@ -7723,6 +7789,35 @@ function selectColor(element, colorName) {
     
     document.getElementById('selectedColorText').innerText = 'Selected: ' + colorName;
     currentSelectedColor = colorName;
+}
+
+// Size එක click කරාම වෙනස් කරන Function එක
+function selectSize(element, sizeName, sizePrice, productId) {
+    // අනිත් සේරගෙම button එකේ style එක සාමාන්‍ය විදිහට හදනවා
+    document.querySelectorAll('.size-option-btn').forEach(btn => {
+        btn.style.borderColor = 'var(--gray-300)';
+        btn.style.background = 'white';
+        btn.style.color = 'var(--gray-700)';
+    });
+    // තේරුව එකේ style එක වෙනස් කරනවා
+    element.style.borderColor = 'var(--primary)';
+    element.style.background = 'var(--primary)';
+    element.style.color = 'white';
+    
+    // Update price display
+    const priceEl = document.getElementById('detailPrice');
+    if (priceEl) {
+        priceEl.innerText = 'Rs. ' + sizePrice.toLocaleString();
+    }
+    
+    // Update selected text
+    const sizeTextEl = document.getElementById('selectedSizeText');
+    if (sizeTextEl) {
+        sizeTextEl.innerText = 'Selected: ' + sizeName + ' (Rs. ' + sizePrice.toLocaleString() + ')';
+    }
+    
+    // Store selected size for cart
+    currentSelectedSize = { name: sizeName, price: sizePrice, productId: productId };
 }
 
 // ===== Product Details Page Function (UPDATED WITH BACK BUTTON) =====
@@ -7789,6 +7884,34 @@ function viewProduct(productId) {
         `;
     }
 
+    // Size selector for products with sizes (like product 71)
+    let sizesHtml = '';
+    let currentSelectedSize = null;
+    let currentSizePrice = product.price;
+    
+    if (product.sizes && product.sizes.length > 0) {
+        currentSelectedSize = product.sizes[0].name;
+        currentSizePrice = product.sizes[0].price;
+        sizesHtml = `
+            <div class="product-sizes" style="margin-bottom: 20px;">
+                <label style="font-weight: 600; color: var(--gray-700); display: block; margin-bottom: 8px;">Size:</label>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    ${product.sizes.map((size, index) => `
+                        <button 
+                            class="size-option-btn" 
+                            onclick="selectSize(this, '${size.name}', ${size.price}, ${product.id})"
+                            style="padding: 10px 20px; border-radius: 8px; border: 2px solid ${index === 0 ? 'var(--primary)' : 'var(--gray-300)'}; 
+                                   background: ${index === 0 ? 'var(--primary)' : 'white'}; color: ${index === 0 ? 'white' : 'var(--gray-700)'};
+                                   cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.2s;">
+                            ${size.name} - Rs. ${size.price.toLocaleString()}
+                        </button>
+                    `).join('')}
+                </div>
+                <span id="selectedSizeText" style="display: block; font-size: 0.85rem; color: var(--gray-500); margin-top: 8px;">Selected: ${currentSelectedSize} (Rs. ${currentSizePrice.toLocaleString()})</span>
+            </div>
+        `;
+    }
+
     // --- අලුතින් එකතු කරපු BACK බටන් එක ---
     const backButtonHtml = `
         <div style="grid-column: 1 / -1; margin-bottom: 20px; width: 100%;">
@@ -7823,14 +7946,21 @@ function viewProduct(productId) {
             </div>
             
             <div class="product-detail-price">
-                <span class="current-price">Rs. ${product.price.toLocaleString()}</span>
+                <span class="current-price" id="detailPrice">Rs. ${(currentSizePrice || product.price).toLocaleString()}</span>
                 ${product.originalPrice ? `<span class="original-price" style="text-decoration: line-through; color: #9CA3AF;">Rs. ${product.originalPrice.toLocaleString()}</span>` : ''}
                 ${discountBadge}
+            </div>
+            
+            <div class="product-stock-status" style="margin: 10px 0; font-weight: 600; ${product.inStock ? 'color: #10B981;' : 'color: #EF4444;'}">
+                <i class="fas fa-${product.inStock ? 'check-circle' : 'times-circle'}"></i>
+                ${product.inStock ? 'In Stock' : 'Out of Stock'}
             </div>
             
             <p class="product-description">${product.description}</p>
             
             ${colorsHtml}
+            
+            ${sizesHtml}
             
             <div class="quantity-selector">
                 <label>Quantity:</label>
@@ -7860,9 +7990,7 @@ function viewProduct(productId) {
     
     // Load related products
     loadRelatedProducts(product.id, product.category);
-}
-
-// ===== Load Related Products Function =====
+}// ===== Load Related Products Function =====
 function loadRelatedProducts(currentProductId, category) {
     const container = document.getElementById('relatedProducts');
     if (!container) return;
@@ -7888,21 +8016,30 @@ function addDetailToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
+    // Get the price - use selected size price if available
+    let itemPrice = product.price;
+    let sizeInfo = '';
+    
+    if (currentSelectedSize && currentSelectedSize.productId === productId) {
+        itemPrice = currentSelectedSize.price;
+        sizeInfo = ` (${currentSelectedSize.name})`;
+    }
+    
     // Cart එකේ මේ Product එකම, මේ Color එකෙන්ම කලින් තියෙනවද බලනවා
-    const existingItem = cart.find(item => item.id === productId && item.color === currentSelectedColor);
+    const existingItem = cart.find(item => item.id === productId && item.color === currentSelectedColor && item.size === (currentSelectedSize ? currentSelectedSize.name : null));
     
     if (existingItem) {
         existingItem.qty += qty;
     } else {
-        // අලුත් item එකට color එකත් save කරනවා
-        cart.push({ id: productId, qty: qty, color: currentSelectedColor });
+        // අලුත් item එකට color එකත් size එකත් save කරනවා
+        cart.push({ id: productId, qty: qty, color: currentSelectedColor, size: currentSelectedSize ? currentSelectedSize.name : null, price: itemPrice });
     }
     
     localStorage.setItem('levindra_cart', JSON.stringify(cart));
     updateCartUI(); // මේකෙන් Cart සයිඩ් බාර් එක අප්ඩේට් වෙනවා
     
     let colorMsg = currentSelectedColor ? ` [${currentSelectedColor}]` : '';
-    showToast(`${product.name}${colorMsg} (x${qty}) added to cart!`);
+    showToast(`${product.name}${colorMsg}${sizeInfo} (x${qty}) added to cart!`);
 }
 // Mobile Filter එක අරින/වහන ලේසිම Function එක
 function toggleMobileFilter() {
