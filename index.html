@@ -6273,8 +6273,8 @@ ul {
     },
     // BAGS
     { id:11, name: "12V DC Neon Strip Light - 5m", category: "electric", subcategory: "gadgets", price: 1250, originalPrice: 1500, image: ["lights.jpeg","lights 01.jpeg","lights 02.jpeg","lights 03.jpeg"],colors:[{ name: "White", code: "#FFFFFF"},{ name: "Red", code: "#EF4444"},{ name: "Blue", code: "#3B82F6"},{ name: "Lime Blue", code: "#ADD8E6"},{name:"yellow",code:"#FFFF00"},{name:"gren", code:"#00FF00"},{name:"pink",code:"#FFC0CB"}], rating: 4.8, reviews: 156, badge: "hot", description: "High-quality 12V DC neon strip light with 5m length. Perfect for home or office decoration. 5M LED neon rope light, DC12V low voltage, SMD 2835 120 LED/m, warm white 3000K, IP67 waterproof rated (Waterproof power supply required for outdoor use, NOT included in the package). •", inStock: true, isNew: false },
-    { id:12, name: "School Bag - Blue", category: "bags", subcategory: "school-bags", price: 3200, originalPrice: 4000, image: "images/school-bag-blue.jpg", rating: 4.4, reviews: 112, badge: "sale", description: "Durable blue school bag with laptop compartment. Ergonomic design for comfort.", inStock: true, isNew: false },
-    { id: 13, name: "Ladies Handbag - Pink", category: "bags", subcategory: "ladies-bags", price: 3800, originalPrice: 4500, image: "images/ladies-handbag-pink.jpg", rating: 4.5, reviews: 89, badge: "new", description: "Stylish pink ladies handbag with multiple pockets. Premium PU leather material.", inStock: true, isNew: true },
+    { id:12, name: "puma Sports Sandals", category: "shoes", subcategory: "men-sandals", price: 2100, originalPrice: 2500, image: ["black ball.png","ball 01.png","ball.png"], sizes: [{name: "40", price: 2100}, {name: "41", price: 2100}, {name: "42", price: 2100}, {name: "43", price: 2100}, {name: "44", price: 2100}, {name: "45", price: 2100}], rating: 4.7, reviews: 89, badge: "hot", description: "Experience unparalleled comfort with our premium Puma Sports Sandals. Designed for the modern athlete and casual wearer alike, these sandals feature an innovative contoured footbed that adapts to your foot's unique shape, providing personalized support with every step you take. The sleek sporty design combines functionality with fashion, featuring bold Puma branding that makes a statement whether you're at the gym, the beach, or hanging out with friends. Constructed with premium synthetic materials and a reinforced strap system, these sandals are built to last through countless adventures. The advanced anti-slip outsole technology ensures superior traction on wet and dry surfaces alike, giving you the confidence to move freely in any environment. Versatile enough to complement any casual outfit, these sandals are the perfect addition to your summer footwear collection.", keyFeatures: ["Premium Comfort: Ergonomic contoured footbed for personalized support", "Sporty Design: Bold Puma branding for a standout look", "Durable Construction: High-quality synthetic materials", "Advanced Grip: Anti-slip outsole for all surfaces", "Versatile Style: Perfect for casual and athletic wear"], inStock: true, isNew: true },
+    { id: 13, name: "nike Sports Sandals", category: "shoes", subcategory: "men-sandals", price: 1990, originalPrice: 2100, image: ["black nike.png","blue nike (2).png","blue nike.png"],sizes: [{name: "40", price: 1990}, {name: "41", price: 1990}, {name: "42", price: 1990}, {name: "43", price: 1990}, {name: "44", price: 1990}, {name: "45", price: 2100}], rating: 4.5, reviews: 89, badge: "new", description: "Elevate your footwear game with our premium Nike Sports Sandals, where legendary style meets exceptional comfort. These sandals feature an advanced cushioned footbed that molds to your foot, delivering cloud-like comfort for all-day wear. The iconic Nike design with bold branding creates a timeless athletic look that transitions seamlessly from workout sessions to weekend adventures. Crafted with premium materials and expert craftsmanship, these sandals are designed to withstand the test of time while maintaining their pristine appearance. The innovative grip technology provides reliable traction on any surface, ensuring you stay confident in every step. Whether you're pairing them with athletic socks for a sporty look or going barefoot for maximum breathability, these versatile sandals are the ultimate choice for the style-conscious individual.", keyFeatures: ["Cloud Comfort: Advanced cushioned footbed for all-day comfort", "Iconic Style: Bold Nike branding for a timeless look", "Premium Quality: Expert craftsmanship and durable materials", "Superior Grip: Reliable traction on any surface", "Ultimate Versatility: Perfect for any casual or athletic outfit"], inStock: true, isNew: true },
     { id: 14, name: "Large Capacity Travel Bag",
         category: "bags",
         subcategory: "ladies-bags",
@@ -6827,9 +6827,12 @@ const categoryData = {
         name: "Shoes",
         icon: "fa-shoe-prints",
         subcategories: {
+            "kids-shoes": "Kids Shoes",
             "school-shoes": "School Shoes",
             "mens-shoes": "Men's Shoes",
-            "ladies-shoes": "Ladies Shoes"
+            "ladies-shoes": "Ladies Shoes",
+            "men-sandals": "Men Sandals",
+            "ladies-sandals": "Ladies Sandals"
         }
     },
     bags: {
@@ -7995,6 +7998,23 @@ function viewProduct(productId) {
             
             <p class="product-description">${product.description}</p>
             
+            <!-- Key Features Section -->
+            ${product.keyFeatures ? `
+            <div class="product-key-features" style="margin: 20px 0; padding: 20px; background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-star" style="color: #f59e0b;"></i> Key Features
+                </h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    ${product.keyFeatures.map(feature => `
+                        <li style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #475569; font-size: 0.95rem;">
+                            <i class="fas fa-check-circle" style="color: #10b981; margin-top: 3px; flex-shrink: 0;"></i>
+                            <span>${feature}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+            ` : ''}
+            
             ${colorsHtml}
             
             ${sizesHtml}
@@ -8159,5 +8179,18 @@ function runCounters() {
 }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69b845e563bf201c368be23a/1jjrt22jn';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
