@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google-site-verification" content="ADuWolKCXKxaGwT2uAeXKXGplU5IH7ZZHhM1DtviSck" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lavindra - Your One Stop Shop</title>
@@ -1798,36 +1799,37 @@ ul {
     background: var(--white);
     border-radius: var(--radius-lg);
     margin-bottom: 15px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--gray-100);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.1);
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .accordion-item:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
+    transform: translateY(-2px);
 }
 
 .accordion-item.active {
-    border-color: var(--primary-light);
-    box-shadow: var(--shadow-purple);
+    border-color: var(--primary);
+    box-shadow: 0 10px 35px rgba(124, 58, 237, 0.2);
 }
 
 .accordion-header {
     width: 100%;
-    padding: 20px 25px;
+    padding: 22px 28px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
     background: var(--white);
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     border: none;
     text-align: left;
 }
 
 .accordion-header:hover {
-    background: var(--off-white);
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(249, 168, 212, 0.03));
 }
 
 .accordion-item.active .accordion-header {
@@ -1835,31 +1837,33 @@ ul {
 }
 
 .accordion-number {
-    width: 40px;
-    height: 40px;
-    background: var(--gray-100);
-    border-radius: var(--radius-sm);
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--primary);
+    font-size: 1rem;
+    color: var(--white);
     flex-shrink: 0;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
 }
 
 .accordion-item.active .accordion-number {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.25);
     color: var(--white);
+    box-shadow: none;
 }
 
 .accordion-title {
     flex: 1;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--gray-800);
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .accordion-item.active .accordion-title {
@@ -1868,21 +1872,34 @@ ul {
 
 .accordion-icon {
     color: var(--gray-400);
-    font-size: 0.9rem;
-    transition: var(--transition);
+    font-size: 1rem;
+    transition: all 0.3s ease;
     transform: rotate(0deg);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--gray-100);
+}
+
+.accordion-item:hover .accordion-icon {
+    background: var(--gray-200);
+    color: var(--primary);
 }
 
 .accordion-item.active .accordion-icon {
     color: var(--white);
+    background: rgba(255,255,255,0.2);
     transform: rotate(180deg);
 }
 
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out;
-    background: var(--gray-50);
+    transition: max-height 0.4s ease-out, padding 0.3s ease;
+    background: linear-gradient(180deg, #fafafa 0%, #f5f3ff 100%);
 }
 
 .accordion-item.active .accordion-content {
@@ -1890,13 +1907,26 @@ ul {
 }
 
 .accordion-content-inner {
-    padding: 25px;
+    padding: 28px;
+    border-top: 1px solid rgba(124, 58, 237, 0.1);
 }
 
 .accordion-content p {
     margin-bottom: 15px;
     color: var(--gray-600);
-    line-height: 1.7;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.accordion-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.accordion-content li {
+    margin-bottom: 8px;
+    color: var(--gray-600);
+    line-height: 1.6;
 }
 
 /* Info Cards */
@@ -1904,33 +1934,40 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .info-card {
     background: var(--white);
-    padding: 20px;
-    border-radius: var(--radius);
+    padding: 22px;
+    border-radius: 16px;
     text-align: center;
-    border: 1px solid var(--gray-100);
-    transition: var(--transition);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.05);
 }
 
 .info-card:hover {
-    border-color: var(--primary-light);
-    transform: translateY(-3px);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.15);
 }
 
 .info-card i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--primary);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .info-card h4 {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--gray-800);
     margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .info-card p {
