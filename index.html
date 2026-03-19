@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="ADuWolKCXKxaGwT2uAeXKXGplU5IH7ZZHhM1DtviSck" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lavindra - Your One Stop Shop</title>
@@ -12,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
-<style>
+    <style>
         /* ==========================================
    LEVINDRA E-COMMERCE - STYLES
    Colors: Purple + White + Light Pink
@@ -159,7 +158,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #C084FC 100%);
+    background: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,96 +175,81 @@ ul {
 /* Preloader Content */
 .preloader-content {
     text-align: center;
-    color: white;
-    animation: fadeInUp 0.6s ease;
+    color: var(--gray-700);
 }
 
 .preloader-logo {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .preloader-logo img {
     width: 120px;
     height: auto;
-    border-radius: 20px;
-    animation: logoPulse 2s ease-in-out infinite;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes logoPulse {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
-    }
+.preloader-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.preloader-icon i {
+    font-size: 36px;
+    color: white;
 }
 
 .preloader-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: 4px;
-    margin: 25px 0 10px 0;
-    color: white;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: var(--primary);
 }
 
 .preloader-tagline {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 400;
-    opacity: 0.95;
     margin: 0;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--gray-500);
 }
 
 /* Progress Bar */
 .preloader-progress {
-    width: 280px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 10px;
-    margin: 35px auto;
+    width: 200px;
+    height: 4px;
+    background: var(--gray-200);
+    border-radius: 4px;
+    margin: 30px auto 0;
     overflow: hidden;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.8), #ffffff);
-    border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 4px;
     animation: progress 1.2s ease-in-out infinite;
     width: 100%;
-    background-size: 200% 100%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes progress {
-    0% {
-        background-position: 100% 0;
-    }
-    100% {
-        background-position: -100% 0;
-    }
 }
 
 .preloader-loading {
-    font-size: 0.85rem;
-    font-weight: 600;
-    opacity: 0.95;
-    margin: 0;
-    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 15px 0 0 0;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: white;
+    color: var(--gray-500);
 }
 
 /* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -273,30 +257,29 @@ ul {
     }
 }
 
-@keyframes bounce {
+@keyframes pulse {
     0%, 100% {
-        transform: translateY(0);
+        transform: scale(1);
+        opacity: 1;
     }
     50% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes pulse-glow {
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(233, 69, 96, 0.4);
-    }
-    50% {
-        box-shadow: 0 0 40px rgba(233, 69, 96, 0.8);
+        transform: scale(1.05);
+        opacity: 0.9;
     }
 }
 
 @keyframes progress {
     0% {
-        background-position: 100% 0;
+        width: 0%;
+        margin-left: 0;
+    }
+    50% {
+        width: 70%;
+        margin-left: 0;
     }
     100% {
-        background-position: -100% 0;
+        width: 0%;
+        margin-left: 100%;
     }
 }
 
@@ -1716,264 +1699,9 @@ ul {
     font-size: 0.6rem;
 }
 
-/* ===== Policy Pages - Modern Design ===== */
-.policy-page {
-    min-height: 60vh;
-}
-
-.policy-hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    border-radius: var(--radius-xl);
-    padding: 60px 50px;
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-    overflow: hidden;
-}
-
-.policy-hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 400px;
-    height: 400px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-}
-
-.policy-hero::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -10%;
-    width: 300px;
-    height: 300px;
-    background: rgba(249,168,212,0.2);
-    border-radius: 50%;
-}
-
-.policy-hero-icon {
-    width: 100px;
-    height: 100px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 30px;
-    position: relative;
-    border: 3px solid rgba(255,255,255,0.3);
-}
-
-.policy-hero-icon i {
-    font-size: 3rem;
-    color: var(--white);
-}
-
-.policy-hero h2 {
-    font-size: 2.5rem;
-    color: var(--white);
-    margin-bottom: 15px;
-    font-weight: 700;
-    position: relative;
-}
-
-.policy-hero p {
-    color: rgba(255,255,255,0.9);
-    font-size: 1.15rem;
-    max-width: 650px;
-    margin: 0 auto 30px;
-    position: relative;
-    line-height: 1.7;
-}
-
-.policy-meta {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-.policy-meta span {
-    color: rgba(255,255,255,0.8);
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    background: rgba(255,255,255,0.1);
-    border-radius: var(--radius-full);
-}
-
-.policy-meta i {
-    color: var(--pink);
-}
-
-/* Policy Accordion */
-.policy-accordion {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.policy-accordion .accordion-item {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    margin-bottom: 20px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--gray-100);
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.policy-accordion .accordion-item:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
-    border-color: var(--primary-light);
-}
-
-.policy-accordion .accordion-item.active {
-    border-color: var(--primary);
-    box-shadow: 0 15px 40px rgba(124, 58, 237, 0.15);
-}
-
-.policy-accordion .accordion-header {
-    width: 100%;
-    padding: 25px 30px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: var(--white);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    text-align: left;
-}
-
-.policy-accordion .accordion-header:hover {
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(249, 168, 212, 0.03));
-}
-
-.policy-accordion .accordion-item.active .accordion-header {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-}
-
-.policy-accordion .accordion-number {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: var(--white);
-    flex-shrink: 0;
-}
-
-.policy-accordion .accordion-item.active .accordion-number {
-    background: var(--white);
-    color: var(--primary);
-}
-
-.policy-accordion .accordion-title {
-    flex: 1;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--gray-800);
-}
-
-.policy-accordion .accordion-item.active .accordion-title {
-    color: var(--white);
-}
-
-.policy-accordion .accordion-icon {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    transition: all 0.3s ease;
-}
-
-.policy-accordion .accordion-item.active .accordion-icon {
-    color: var(--white);
-    transform: rotate(180deg);
-}
-
-.policy-accordion .accordion-content {
-    padding: 0 30px 25px 30px;
-    display: none;
-}
-
-.policy-accordion .accordion-item.active .accordion-content {
-    display: block;
-}
-
-.policy-accordion .accordion-content p {
-    color: var(--gray-600);
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.policy-accordion .feature-list {
-    list-style: none;
-    padding: 0;
-}
-
-.policy-accordion .feature-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--gray-100);
-    color: var(--gray-700);
-}
-
-.policy-accordion .feature-list li:last-child {
-    border-bottom: none;
-}
-
-.policy-accordion .feature-list i {
-    color: var(--primary);
-    margin-top: 4px;
-}
-
-/* Contact CTA in policy pages */
-.policy-cta {
-    background: linear-gradient(135deg, var(--gray-50), var(--off-white));
-    border-radius: var(--radius-lg);
-    padding: 30px;
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border: 1px solid var(--gray-200);
-}
-
-.policy-cta i {
-    font-size: 2rem;
-    color: var(--primary);
-}
-
-.policy-cta-content h4 {
-    font-size: 1.1rem;
-    color: var(--gray-800);
-    margin-bottom: 5px;
-}
-
-.policy-cta-content p {
-    color: var(--gray-600);
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-/* Legacy styles - kept for compatibility */
+/* ===== Privacy Policy Page - Accordion Style ===== */
 .privacy-hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     border-radius: var(--radius-xl);
     padding: 50px 40px;
     text-align: center;
@@ -2054,37 +1782,36 @@ ul {
     background: var(--white);
     border-radius: var(--radius-lg);
     margin-bottom: 15px;
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.08);
-    border: 1px solid rgba(124, 58, 237, 0.1);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .accordion-item:hover {
-    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .accordion-item.active {
-    border-color: var(--primary);
-    box-shadow: 0 10px 35px rgba(124, 58, 237, 0.2);
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-purple);
 }
 
 .accordion-header {
     width: 100%;
-    padding: 22px 28px;
+    padding: 20px 25px;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 15px;
     background: var(--white);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     border: none;
     text-align: left;
 }
 
 .accordion-header:hover {
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(249, 168, 212, 0.03));
+    background: var(--off-white);
 }
 
 .accordion-item.active .accordion-header {
@@ -2092,33 +1819,31 @@ ul {
 }
 
 .accordion-number {
-    width: 45px;
-    height: 45px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1rem;
-    color: var(--white);
+    font-size: 0.85rem;
+    color: var(--primary);
     flex-shrink: 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+    transition: var(--transition);
 }
 
 .accordion-item.active .accordion-number {
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.2);
     color: var(--white);
-    box-shadow: none;
 }
 
 .accordion-title {
     flex: 1;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--gray-800);
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .accordion-item.active .accordion-title {
@@ -2127,34 +1852,21 @@ ul {
 
 .accordion-icon {
     color: var(--gray-400);
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    transition: var(--transition);
     transform: rotate(0deg);
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--gray-100);
-}
-
-.accordion-item:hover .accordion-icon {
-    background: var(--gray-200);
-    color: var(--primary);
 }
 
 .accordion-item.active .accordion-icon {
     color: var(--white);
-    background: rgba(255,255,255,0.2);
     transform: rotate(180deg);
 }
 
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, padding 0.3s ease;
-    background: linear-gradient(180deg, #fafafa 0%, #f5f3ff 100%);
+    transition: max-height 0.4s ease-out;
+    background: var(--gray-50);
 }
 
 .accordion-item.active .accordion-content {
@@ -2162,26 +1874,13 @@ ul {
 }
 
 .accordion-content-inner {
-    padding: 28px;
-    border-top: 1px solid rgba(124, 58, 237, 0.1);
+    padding: 25px;
 }
 
 .accordion-content p {
     margin-bottom: 15px;
     color: var(--gray-600);
-    line-height: 1.8;
-    font-size: 0.95rem;
-}
-
-.accordion-content ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
-}
-
-.accordion-content li {
-    margin-bottom: 8px;
-    color: var(--gray-600);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* Info Cards */
@@ -2189,40 +1888,33 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .info-card {
     background: var(--white);
-    padding: 22px;
-    border-radius: 16px;
+    padding: 20px;
+    border-radius: var(--radius);
     text-align: center;
-    border: 1px solid rgba(124, 58, 237, 0.1);
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.05);
+    border: 1px solid var(--gray-100);
+    transition: var(--transition);
 }
 
 .info-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.15);
+    border-color: var(--primary-light);
+    transform: translateY(-3px);
 }
 
 .info-card i {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--primary);
-    margin-bottom: 12px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    margin-bottom: 10px;
 }
 
 .info-card h4 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--gray-800);
     margin-bottom: 5px;
-    font-weight: 600;
 }
 
 .info-card p {
@@ -2467,42 +2159,13 @@ ul {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .policy-hero {
-        padding: 40px 25px;
+    .privacy-hero {
+        padding: 30px 20px;
     }
     
-    .policy-hero h2 {
-        font-size: 1.8rem;
+    .privacy-hero h2 {
+        font-size: 1.4rem;
     }
-    
-    .policy-hero-icon {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .policy-hero-icon i {
-        font-size: 2.5rem;
-    }
-    
-    .policy-meta {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .policy-accordion .accordion-header {
-        padding: 20px;
-    }
-    
-    .policy-accordion .accordion-number {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
-    }
-    
-    .policy-accordion .accordion-title {
-        font-size: 1rem;
-    }
-}
     
     .privacy-meta {
         flex-direction: column;
@@ -5249,7 +4912,9 @@ ul {
     <div id="preloader">
         <div class="preloader-content">
             <div class="preloader-logo">
-                <img src="Logo 01.png" alt="Lavindra Logo">
+                <div class="preloader-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
                 <h1 class="preloader-title">LAVINDRA</h1>
                 <p class="preloader-tagline">Your One Stop Shop</p>
             </div>
@@ -5307,8 +4972,8 @@ ul {
         <a href="#" class="mobile-nav-item active" data-page="home">
             <i class="fas fa-home"></i><span>Home</span>
         </a>
-        <a href="#" class="mobile-nav-item" data-page="shop">
-            <i class="fas fa-store"></i><span>Shop</span>
+        <a href="#" class="mobile-nav-item" data-page="categories">
+            <i class="fas fa-th-large"></i><span>Categories</span>
         </a>
         <a href="#" class="mobile-nav-item cart-mobile" id="cartMobileToggle">
             <i class="fas fa-shopping-cart"></i>
@@ -5316,7 +4981,7 @@ ul {
             <span>Cart</span>
         </a>
         <a href="#" class="mobile-nav-item" data-page="wishlist">
-            <i class="fas fa-heart"></i><span></span>
+            <i class="fas fa-heart"></i><span>Wishlist</span>
         </a>
     </nav>
 
@@ -5351,7 +5016,7 @@ ul {
             <!-- Hero -->
             <div class="hero">
                 <div class="hero-slider">
-                    <div class="hero-slide active" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('e.jpg') center/cover no-repeat;">
+                    <div class="hero-slide active" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('home.jpeg') center/cover no-repeat;">
                         <div class="hero-content animate-slide-up">
                             <span class="hero-badge">New Collection 2026</span>
                             <h1>Welcome to <span class="highlight">Levindra</span></h1>
@@ -5373,7 +5038,7 @@ ul {
                             </div>
                         </div>
                     </div>
-                    <div class="hero-slide" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('e-commers 01.jpg') center/cover no-repeat;">
+                    <div class="hero-slide" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('offer.png') center/cover no-repeat;">
                         <div class="hero-content animate-slide-up">
                             <span class="hero-badge">Special Offers</span>
                             <h1>Up to <span class="highlight">10% Off</span></h1>
@@ -5752,7 +5417,7 @@ ul {
                 <div class="checkout-layout">
                     <div class="checkout-form">
                         <h3><i class="fas fa-map-marker-alt"></i> Shipping Information</h3>
-                        <form id="checkoutForm" action="https://formspree.io/f/maqpjkll" method="POST">
+                        <form id="checkoutForm" method="POST" enctype="multipart/form-data">
     <div class="form-row">
         <div class="form-group">
             <label>First Name *</label>
@@ -5803,7 +5468,7 @@ ul {
     <input type="hidden" name="Total_Price" id="totalPrice">
 
     <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-block mt-4">
-        <i class="fas fa-envelope"></i> Place Order
+        <i class="fas fa-lock"></i> Place Order
     </button>
 </form>
                     </div>
@@ -6056,7 +5721,7 @@ ul {
             </div>
         </section>
 
-        <section class="page policy-page" id="page-privacy">
+        <section class="page" id="page-privacy">
     <div class="page-header">
         <div class="container">
             <h1>Privacy Policy</h1>
@@ -6067,20 +5732,20 @@ ul {
     </div>
     <div class="container section">
         <!-- Privacy Policy Hero -->
-        <div class="policy-hero">
-            <div class="policy-hero-icon">
+        <div class="privacy-hero">
+            <div class="privacy-hero-icon">
                 <i class="fas fa-user-shield"></i>
             </div>
             <h2>Your Privacy Matters to Us</h2>
             <p>We are committed to protecting your personal information and your right to privacy. This policy outlines how we collect, use, and safeguard your data.</p>
-            <div class="policy-meta">
+            <div class="privacy-meta">
                 <span><i class="fas fa-calendar-alt"></i> Last Updated: March 2026</span>
                 <span><i class="fas fa-envelope"></i> Questions? Contact us at lavindra.lk@gmail.com</span>
             </div>
         </div>
         
         <!-- Privacy Accordion -->
-        <div class="policy-accordion">
+        <div class="privacy-accordion">
             
             <div class="accordion-item">
                 <button class="accordion-header">
@@ -6354,128 +6019,6 @@ ul {
     </div>
 </section>
 
-        <!-- ========== REFUND & RETURN POLICY PAGE ========== -->
-        <section class="page policy-page" id="page-refund">
-    <div class="page-header">
-        <div class="container">
-            <h1>Refund & Return Policy</h1>
-            <div class="breadcrumb">
-                <a href="#" data-page="home">Home</a> <i class="fas fa-chevron-right"></i> <span>Refund & Return Policy</span>
-            </div>
-        </div>
-    </div>
-    <div class="container section">
-        <div class="policy-hero">
-            <div class="policy-hero-icon">
-                <i class="fas fa-undo-alt"></i>
-            </div>
-            <h2>Easy Returns & Refunds</h2>
-            <p>We want you to be completely satisfied with your purchase. If you're not happy with your order, we make it easy to return or exchange items.</p>
-            <div class="policy-meta">
-                <span><i class="fas fa-calendar-alt"></i> Last Updated: March 2026</span>
-            </div>
-        </div>
-        <div class="policy-accordion">
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span class="accordion-number">01</span>
-                    <span class="accordion-title">Return Eligibility</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-                <div class="accordion-content">
-                    <p>You may return most items within 7 days of delivery for a full refund. Items must be unused, in original packaging, and accompanied by receipt.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span class="accordion-number">02</span>
-                    <span class="accordion-title">Refund Process</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-                <div class="accordion-content">
-                    <p>Once we receive your returned item, we will inspect it and notify you. Refunds are processed within 5-7 business days to your original payment method.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span class="accordion-number">03</span>
-                    <span class="accordion-title">Damaged or Defective Items</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-                <div class="accordion-content">
-                    <p>If you receive a damaged or defective item, contact us within 48 hours with photos. We'll arrange free return shipping and full refund or replacement.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- ========== TERMS & CONDITIONS PAGE ========== -->
-        <section class="page policy-page" id="page-terms">
-    <div class="page-header">
-        <div class="container">
-            <h1>Terms & Conditions</h1>
-            <div class="breadcrumb">
-                <a href="#" data-page="home">Home</a> <i class="fas fa-chevron-right"></i> <span>Terms & Conditions</span>
-            </div>
-        </div>
-    </div>
-    <div class="container section">
-        <div class="policy-hero">
-            <div class="policy-hero-icon">
-                <i class="fas fa-gavel"></i>
-            </div>
-            <h2>Terms & Conditions</h2>
-            <p>Please read these terms and conditions carefully before using our website.</p>
-            <div class="policy-meta">
-                <span><i class="fas fa-calendar-alt"></i> Last Updated: March 2026</span>
-            </div>
-        </div>
-        <div class="policy-accordion">
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span class="accordion-number">01</span>
-                    <span class="accordion-title">Acceptance of Terms</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-                <div class="accordion-content">
-                    <p>By accessing and using the Lavindra website, you accept and agree to be bound by these terms and conditions.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span class="accordion-number">02</span>
-                    <span class="accordion-title">Orders & Pricing</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-                <div class="accordion-content">
-                    <p>All orders are subject to availability. Prices are subject to change without notice. We reserve the right to cancel orders for any reason.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span class="accordion-number">03</span>
-                    <span class="accordion-title">Shipping & Delivery</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-                <div class="accordion-content">
-                    <p>Delivery times are estimates and not guaranteed. Shipping is available within Sri Lanka only. Orders are processed within 1-3 business days.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span class="accordion-number">04</span>
-                    <span class="accordion-title">Governing Law</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-                <div class="accordion-content">
-                    <p>These terms are governed by the laws of Sri Lanka. Any disputes will be resolved in Sri Lankan courts.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
     </main>
 
     <!-- Footer -->
@@ -6521,8 +6064,6 @@ ul {
                             <li><a href="#" data-page="about"><i class="fas fa-chevron-right"></i> About Us</a></li>
                             <li><a href="#" data-page="contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                             <li><a href="#" data-page="privacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-                            <li><a href="#" data-page="refund"><i class="fas fa-chevron-right"></i> Refund & Return Policy</a></li>
-                            <li><a href="#" data-page="terms"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -6582,11 +6123,13 @@ ul {
         </div>
     </div>
 
-<script>
+    <script>
         /* ==========================================
    LEVINDRA E-COMMERCE - JavaScript
    Single Page Application Logic
    ========================================== */
+
+// ===== Product Data =====
    const products = [
     // SHOES
     { id: 1, name: "Classic School Shoes - Black", category: "shoes", subcategory: "school-shoes", price: 3500, originalPrice: 4200, image: "PE0436-1.jpg", rating: 4.5, reviews: 128, badge: "hot", description: "Durable black school shoes with comfortable cushioning. Perfect for everyday school wear. Made with premium leather and anti-slip sole.", inStock: false, isNew: false },
@@ -7413,24 +6956,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     updateWishlistUI();
     
-    // Handle URL hash on page load
-    const hash = window.location.hash.slice(1);
-    if (hash) {
-        navigateTo(hash);
-    } else {
-        // Show home page by default
-        navigateTo('home');
-    }
-    
-    // Handle hash changes
-    window.addEventListener('hashchange', () => {
-        const newHash = window.location.hash.slice(1);
-        if (newHash) {
-            navigateTo(newHash);
-        } else {
-            navigateTo('home');
-        }
-    });
+    // Show home page by default
+    navigateTo('home');
 });
 
 // ===== Privacy Policy Accordion =====
@@ -7492,76 +7019,59 @@ if (checkoutForm) {
 
         const orderId = 'LEV-' + Date.now().toString(36).toUpperCase();
 
-        // Build order details for Formspree and WhatsApp
-        let orderDetails = `*New Order - Lavindra Shop*\n\n`;
-        orderDetails += `*🙍🏻 Customer Info:*\n`;
-        orderDetails += `Name: ${firstName} ${lastName}\n`;
-        orderDetails += `Phone: ${phone}\n\n`;
-        orderDetails += `*🚛 Delivery Details:*\n`;
-        orderDetails += `Address: ${address}\n`;
-        orderDetails += `City: ${city}\n`;
-        orderDetails += `Delivery Fee: Rs. 400\n\n`;
-        orderDetails += `*🛒 Order Items:*\n`;
+        const orderIdEl = document.getElementById('orderId');
+        if (orderIdEl) orderIdEl.textContent = orderId;
         
-        if (cart.length > 0) {
-            cart.forEach((item, index) => {
-                const product = products.find(p => p.id === item.id);
-                if (product) {
-                    let qty = item.qty || 1;
-                    let itemTotal = product.price * qty;
-                    let colorText = item.color ? ` [Color: ${item.color}]` : '';
-                    orderDetails += `${index + 1}. ${product.name}${colorText} (x${qty}) - Rs. ${itemTotal.toLocaleString()}\n`;
-                }
-            });
-        }
-
-        orderDetails += `\n*💰 Final Total (with Delivery): ${finalTotalAmount}*\n`;
-        orderDetails += `*Payment Method: ${paymentMethod === 'cod' ? 'Cash on Delivery (COD)' : 'Bank Transfer'}*\n\n`;
-        orderDetails += `🏷️ Order ID: ${orderId}\n`;
-        orderDetails += `❤️ Thank you! Please confirm this order.`;
-
-        // Submit to Formspree
-        const formData = new FormData(form);
-        formData.append('order_details', orderDetails);
-        formData.append('order_id', orderId);
-        formData.append('cart_items', JSON.stringify(cart));
-        formData.append('total_amount', finalTotalAmount);
-        formData.append('payment_method', paymentMethod);
-
-        try {
-            const response = await fetch('https://formspree.io/f/maqpjkll', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                // Show success modal
-                const orderIdEl = document.getElementById('orderId');
-                if (orderIdEl) orderIdEl.textContent = orderId;
-                
-                const overlay = document.getElementById('orderSuccessOverlay');
-                const modal = document.getElementById('orderSuccessModal');
-                if (overlay) overlay.classList.add('active');
-                if (modal) modal.classList.add('active');
-                
-                cart = [];
-                localStorage.removeItem('levindra_cart');
-                updateCartUI();
-                form.reset();
-            } else {
-                alert('There was an error submitting your order. Please try again.');
+        const overlay = document.getElementById('orderSuccessOverlay');
+        const modal = document.getElementById('orderSuccessModal');
+        if (overlay) overlay.classList.add('active');
+        if (modal) modal.classList.add('active');
+        
+        if (paymentMethod === 'cod') {
+            let whatsappMessage = `*New Order - Lavindra Shop*\n\n`;
+            
+            whatsappMessage += `*🙍🏻 Customer Info:*\n`;
+            whatsappMessage += `Name: ${firstName} ${lastName}\n`;
+            whatsappMessage += `Phone: ${phone}\n\n`;
+            
+            whatsappMessage += `*🚛 Delivery Details:*\n`;
+            whatsappMessage += `Address: ${address}\n`;
+            whatsappMessage += `City: ${city}\n`;
+            whatsappMessage += `Delivery Fee: Rs. 450\n\n`;
+            
+            whatsappMessage += `*🛒 Order Items:*\n`;
+            
+            if (cart.length > 0) {
+                cart.forEach((item, index) => {
+                    const product = products.find(p => p.id === item.id);
+                    if (product) {
+                        let qty = item.qty || 1;
+                        let itemTotal = product.price * qty;
+                        let colorText = item.color ? ` [Color: ${item.color}]` : '';
+                        whatsappMessage += `${index + 1}. ${product.name}${colorText} (x${qty}) - Rs. ${itemTotal.toLocaleString()}\n`;
+                    }
+                });
             }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('There was an error submitting your order. Please try again.');
+
+            whatsappMessage += `\n*💰 Final Total (with Delivery): ${finalTotalAmount}*\n`;
+            whatsappMessage += `*Payment Method: Cash on Delivery (COD)*\n\n`;
+            whatsappMessage += `🏷️ Order ID: ${orderId}\n`;
+            whatsappMessage += `❤️ Thank you! Please confirm this order.`;
+
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappURL = `https://wa.me/94789647790?text=${encodedMessage}`;
+            
+            window.open(whatsappURL, '_blank');
         }
+        
+        cart = [];
+        localStorage.removeItem('levindra_cart');
+        updateCartUI();
+        form.reset();
         
         if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-envelope"></i> Place Order';
+            submitBtn.innerHTML = '<i class="fas fa-lock"></i> Place Order';
         }
     });
 }
@@ -7624,13 +7134,6 @@ function createProductCard(product) {
     const isWishlisted = wishlist.includes(product.id) ? 'wishlisted' : '';
     const heartIcon = isWishlisted ? 'fas fa-heart' : 'far fa-heart';
     
-    // Check if it's a video file
-    const isVideo = imgUrl && (imgUrl.toLowerCase().endsWith('.mp4') || imgUrl.toLowerCase().endsWith('.webm') || imgUrl.toLowerCase().endsWith('.ogg'));
-    
-    const mediaContent = isVideo 
-        ? `<video src="${imgUrl}" style="width: 100%; height: 100%; object-fit: cover;" muted loop autoplay playsinline></video>`
-        : `<img src="${imgUrl}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">`;
-    
     return `
         <div class="product-card">
             <div class="product-badges">
@@ -7638,7 +7141,7 @@ function createProductCard(product) {
             </div>
             
             <div class="product-image" onclick="viewProduct(${product.id})" style="cursor: pointer;">
-                ${mediaContent}
+                <img src="${imgUrl}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             
             <div class="product-actions">
@@ -7783,8 +7286,7 @@ function updateCartUI() {
         cart.forEach(item => {
             const product = products.find(p => p.id === item.id);
             if (product) {
-                const itemPrice = item.price || product.price;
-                const itemTotal = itemPrice * item.qty;
+                const itemTotal = product.price * item.qty;
                 subtotal += itemTotal;
                 itemCount += item.qty;
                 const imgUrl = Array.isArray(product.image) ? product.image[0] : product.image;
@@ -7794,7 +7296,7 @@ function updateCartUI() {
                         <div class="cart-item-image"><img src="${imgUrl}" alt="${product.name}" style="width:100%; height:100%; object-fit:cover;"></div>
                         <div class="cart-item-info">
                             <div class="cart-item-name">${product.name}</div>
-                            <div class="cart-item-price">Rs. ${itemPrice.toLocaleString()}</div>
+                            <div class="cart-item-price">Rs. ${product.price.toLocaleString()}</div>
                             <div class="cart-item-qty">
                                 <button class="qty-btn" onclick="updateCartQty(${product.id}, -1)">-</button>
                                 <span>${item.qty}</span>
@@ -7806,12 +7308,11 @@ function updateCartUI() {
                 `;
 
                 let colorText = item.color ? ` [Color: ${item.color}]` : '';
-                let sizeText = item.size ? ` (Size: ${item.size})` : '';
                 checkoutHTML += `
                     <div class="checkout-item">
                         <div class="checkout-item-image"><img src="${imgUrl}" alt="${product.name}" style="width:100%; height:100%; object-fit:cover;"></div>
                         <div class="checkout-item-info">
-                            <div class="checkout-item-name">${product.name}${colorText}${sizeText}</div>
+                            <div class="checkout-item-name">${product.name}${colorText}</div>
                             <div class="checkout-item-qty">Qty: ${item.qty}</div>
                         </div>
                         <div class="checkout-item-price">Rs. ${itemTotal.toLocaleString()}</div>
@@ -7827,7 +7328,7 @@ function updateCartUI() {
     document.querySelectorAll('.cart-count').forEach(el => el.textContent = itemCount);
     
     // --- SHIPPING CALCULATION ---
-    let shippingFee = cart.length > 0 ? 400 : 0; // Cart එකේ බඩු තියෙනවා නම් රු.400 යි
+    let shippingFee = cart.length > 0 ? 450 : 0; // Cart එකේ බඩු තියෙනවා නම් රු.450 යි
     let finalTotal = subtotal + shippingFee;
 
     const subtotalString = 'Rs. ' + subtotal.toLocaleString();
@@ -8239,7 +7740,6 @@ function initForms() {
 // ===== Product Details Page Function =====
 // තෝරපු Color එක මතක තියාගන්න Variable එකක්
 let currentSelectedColor = null;
-let currentSelectedSize = null;
 
 // Color එක click කරාම වෙනස් කරන Function එක
 function selectColor(element, colorName) {
@@ -8254,35 +7754,6 @@ function selectColor(element, colorName) {
     
     document.getElementById('selectedColorText').innerText = 'Selected: ' + colorName;
     currentSelectedColor = colorName;
-}
-
-// Size එක click කරාම වෙනස් කරන Function එක
-function selectSize(element, sizeName, sizePrice, productId) {
-    // අනිත් සේරගෙම button එකේ style එක සාමාන්‍ය විදිහට හදනවා
-    document.querySelectorAll('.size-option-btn').forEach(btn => {
-        btn.style.borderColor = 'var(--gray-300)';
-        btn.style.background = 'white';
-        btn.style.color = 'var(--gray-700)';
-    });
-    // තේරුව එකේ style එක වෙනස් කරනවා
-    element.style.borderColor = 'var(--primary)';
-    element.style.background = 'var(--primary)';
-    element.style.color = 'white';
-    
-    // Update price display
-    const priceEl = document.getElementById('detailPrice');
-    if (priceEl) {
-        priceEl.innerText = 'Rs. ' + sizePrice.toLocaleString();
-    }
-    
-    // Update selected text
-    const sizeTextEl = document.getElementById('selectedSizeText');
-    if (sizeTextEl) {
-        sizeTextEl.innerText = 'Selected: ' + sizeName + ' (Rs. ' + sizePrice.toLocaleString() + ')';
-    }
-    
-    // Store selected size for cart
-    currentSelectedSize = { name: sizeName, price: sizePrice, productId: productId };
 }
 
 // ===== Product Details Page Function (UPDATED WITH BACK BUTTON) =====
@@ -8349,34 +7820,6 @@ function viewProduct(productId) {
         `;
     }
 
-    // Size selector for products with sizes (like product 71)
-    let sizesHtml = '';
-    let currentSelectedSize = null;
-    let currentSizePrice = product.price;
-    
-    if (product.sizes && product.sizes.length > 0) {
-        currentSelectedSize = product.sizes[0].name;
-        currentSizePrice = product.sizes[0].price;
-        sizesHtml = `
-            <div class="product-sizes" style="margin-bottom: 20px;">
-                <label style="font-weight: 600; color: var(--gray-700); display: block; margin-bottom: 8px;">Size:</label>
-                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    ${product.sizes.map((size, index) => `
-                        <button 
-                            class="size-option-btn" 
-                            onclick="selectSize(this, '${size.name}', ${size.price}, ${product.id})"
-                            style="padding: 10px 20px; border-radius: 8px; border: 2px solid ${index === 0 ? 'var(--primary)' : 'var(--gray-300)'}; 
-                                   background: ${index === 0 ? 'var(--primary)' : 'white'}; color: ${index === 0 ? 'white' : 'var(--gray-700)'};
-                                   cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.2s;">
-                            ${size.name} - Rs. ${size.price.toLocaleString()}
-                        </button>
-                    `).join('')}
-                </div>
-                <span id="selectedSizeText" style="display: block; font-size: 0.85rem; color: var(--gray-500); margin-top: 8px;">Selected: ${currentSelectedSize} (Rs. ${currentSizePrice.toLocaleString()})</span>
-            </div>
-        `;
-    }
-
     // --- අලුතින් එකතු කරපු BACK බටන් එක ---
     const backButtonHtml = `
         <div style="grid-column: 1 / -1; margin-bottom: 20px; width: 100%;">
@@ -8386,18 +7829,12 @@ function viewProduct(productId) {
         </div>
     `;
 
-    // Check if main image is a video
-    const isMainVideo = mainImage && (mainImage.toLowerCase().endsWith('.mp4') || mainImage.toLowerCase().endsWith('.webm') || mainImage.toLowerCase().endsWith('.ogg'));
-    const mainMediaHtml = isMainVideo 
-        ? `<video id="mainProductImage" src="${mainImage}" style="width: 100%; height: auto; max-height: 500px; border-radius: 16px; object-fit: cover; transition: all 0.3s ease;" controls muted loop autoplay playsinline></video>`
-        : `<img id="mainProductImage" src="${mainImage}" alt="${product.name}" style="width: 100%; height: auto; max-height: 500px; border-radius: 16px; object-fit: cover; transition: all 0.3s ease;">`;
-
     container.innerHTML = `
         ${backButtonHtml}
         
         <div class="product-detail-gallery" style="width: 100%;">
             <div class="product-detail-image" style="background: none; padding: 0; min-height: auto;">
-                ${mainMediaHtml}
+                <img id="mainProductImage" src="${mainImage}" alt="${product.name}" style="width: 100%; height: auto; max-height: 500px; border-radius: 16px; object-fit: cover; transition: all 0.3s ease;">
             </div>
             ${galleryHtml}
         </div>
@@ -8411,38 +7848,14 @@ function viewProduct(productId) {
             </div>
             
             <div class="product-detail-price">
-                <span class="current-price" id="detailPrice">Rs. ${(currentSizePrice || product.price).toLocaleString()}</span>
+                <span class="current-price">Rs. ${product.price.toLocaleString()}</span>
                 ${product.originalPrice ? `<span class="original-price" style="text-decoration: line-through; color: #9CA3AF;">Rs. ${product.originalPrice.toLocaleString()}</span>` : ''}
                 ${discountBadge}
             </div>
             
-            <div class="product-stock-status" style="margin: 10px 0; font-weight: 600; ${product.inStock ? 'color: #10B981;' : 'color: #EF4444;'}">
-                <i class="fas fa-${product.inStock ? 'check-circle' : 'times-circle'}"></i>
-                ${product.inStock ? 'In Stock' : 'Out of Stock'}
-            </div>
-            
             <p class="product-description">${product.description}</p>
             
-            <!-- Key Features Section -->
-            ${product.keyFeatures ? `
-            <div class="product-key-features" style="margin: 20px 0; padding: 20px; background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-radius: 12px; border: 1px solid #e2e8f0;">
-                <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-star" style="color: #f59e0b;"></i> Key Features
-                </h3>
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    ${product.keyFeatures.map(feature => `
-                        <li style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #475569; font-size: 0.95rem;">
-                            <i class="fas fa-check-circle" style="color: #10b981; margin-top: 3px; flex-shrink: 0;"></i>
-                            <span>${feature}</span>
-                        </li>
-                    `).join('')}
-                </ul>
-            </div>
-            ` : ''}
-            
             ${colorsHtml}
-            
-            ${sizesHtml}
             
             <div class="quantity-selector">
                 <label>Quantity:</label>
@@ -8472,7 +7885,9 @@ function viewProduct(productId) {
     
     // Load related products
     loadRelatedProducts(product.id, product.category);
-}// ===== Load Related Products Function =====
+}
+
+// ===== Load Related Products Function =====
 function loadRelatedProducts(currentProductId, category) {
     const container = document.getElementById('relatedProducts');
     if (!container) return;
@@ -8498,30 +7913,21 @@ function addDetailToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
-    // Get the price - use selected size price if available
-    let itemPrice = product.price;
-    let sizeInfo = '';
-    
-    if (currentSelectedSize && currentSelectedSize.productId === productId) {
-        itemPrice = currentSelectedSize.price;
-        sizeInfo = ` (${currentSelectedSize.name})`;
-    }
-    
     // Cart එකේ මේ Product එකම, මේ Color එකෙන්ම කලින් තියෙනවද බලනවා
-    const existingItem = cart.find(item => item.id === productId && item.color === currentSelectedColor && item.size === (currentSelectedSize ? currentSelectedSize.name : null));
+    const existingItem = cart.find(item => item.id === productId && item.color === currentSelectedColor);
     
     if (existingItem) {
         existingItem.qty += qty;
     } else {
-        // අලුත් item එකට color එකත් size එකත් save කරනවා
-        cart.push({ id: productId, qty: qty, color: currentSelectedColor, size: currentSelectedSize ? currentSelectedSize.name : null, price: itemPrice });
+        // අලුත් item එකට color එකත් save කරනවා
+        cart.push({ id: productId, qty: qty, color: currentSelectedColor });
     }
     
     localStorage.setItem('levindra_cart', JSON.stringify(cart));
     updateCartUI(); // මේකෙන් Cart සයිඩ් බාර් එක අප්ඩේට් වෙනවා
     
     let colorMsg = currentSelectedColor ? ` [${currentSelectedColor}]` : '';
-    showToast(`${product.name}${colorMsg}${sizeInfo} (x${qty}) added to cart!`);
+    showToast(`${product.name}${colorMsg} (x${qty}) added to cart!`);
 }
 // Mobile Filter එක අරින/වහන ලේසිම Function එක
 function toggleMobileFilter() {
@@ -8535,13 +7941,6 @@ function toggleMobileFilter() {
 // Pages මාරු කරන Function එක (අලුත් කරපු �ක)
 function navigateTo(pageId) {
     console.log('Navigating to:', pageId);
-    
-    // Update URL hash without scrolling
-    if (pageId && pageId !== 'home') {
-        history.pushState(null, null, '#' + pageId);
-    } else if (pageId === 'home') {
-        history.pushState(null, null, window.location.pathname);
-    }
     
     // තියෙන ඔක්කොම pages hide කරනවා
     document.querySelectorAll('.page').forEach(page => {
