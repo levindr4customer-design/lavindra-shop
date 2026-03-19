@@ -2679,6 +2679,56 @@ ul {
     min-width: 150px;
 }
 
+/* ===== Key Features ===== */
+.product-key-features {
+    margin: 20px 0;
+    padding: 20px;
+    background: var(--gray-50);
+    border-radius: var(--radius);
+}
+
+.product-key-features h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--gray-800);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-key-features h3 i {
+    color: var(--primary);
+}
+
+.product-key-features ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.product-key-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    line-height: 1.4;
+}
+
+.product-key-features li i {
+    color: var(--success);
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Size Buttons */
+.size-btn:hover {
+    border-color: var(--primary) !important;
+    background: var(--primary-light) !important;
+    color: white !important;
+}
+
 /* ===== Wishlist ===== */
 .empty-state {
     text-align: center;
@@ -7756,6 +7806,23 @@ function selectColor(element, colorName) {
     currentSelectedColor = colorName;
 }
 
+// Size එක click කරාම වෙනස් කරන Function එක
+let currentSelectedSize = null;
+function selectSize(element, sizeName) {
+    // අනිත් සේරගෙම border එක සාමාන්‍ය විදිහට හදනවා
+    document.querySelectorAll('.size-btn').forEach(el => {
+        el.style.borderColor = 'var(--gray-300)';
+        el.style.background = 'white';
+        el.style.color = 'var(--gray-700)';
+    });
+    // තේරුව එකේ border එක පාට කරනවා
+    element.style.borderColor = 'var(--primary)';
+    element.style.background = 'var(--primary)';
+    element.style.color = 'white';
+    
+    currentSelectedSize = sizeName;
+}
+
 // ===== Product Details Page Function (UPDATED WITH BACK BUTTON) =====
 function viewProduct(productId) {
     const product = products.find(p => p.id === productId);
@@ -7819,6 +7886,39 @@ function viewProduct(productId) {
             </div>
         `;
     }
+    
+    // Sizes and Key Features Section
+    let sizesAndFeaturesHtml = '';
+    if (product.sizes && product.sizes.length > 0) {
+        sizesAndFeaturesHtml = `
+            <div style="margin-bottom: 20px;">
+                <label style="font-weight: 600; color: var(--gray-700); display: block; margin-bottom: 8px;">Size:</label>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    ${product.sizes.map((size, index) => `
+                        <button onclick="selectSize(this, '${size.name}')" 
+                                class="size-btn"
+                                style="padding: 8px 16px; border: 2px solid ${index === 0 ? 'var(--primary)' : 'var(--gray-300)'}; border-radius: 8px; background: ${index === 0 ? 'var(--primary)' : 'white'}; color: ${index === 0 ? 'white' : 'var(--gray-700)'}; font-weight: 500; cursor: pointer; transition: all 0.2s;">
+                            ${size.name}
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    // Add keyFeatures in sizes section
+    if (product.keyFeatures && product.keyFeatures.length > 0) {
+        sizesAndFeaturesHtml += `
+            <div style="margin-bottom: 20px; padding: 15px; background: var(--gray-50); border-radius: 12px;">
+                <label style="font-weight: 600; color: var(--gray-700); display: block; margin-bottom: 12px;"><i class="fas fa-star" style="color: var(--primary);"></i> Key Features:</label>
+                <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; margin: 0; padding-left: 20px;">
+                    ${product.keyFeatures.map(feature => `
+                        <li style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 4px;"><i class="fas fa-check" style="color: var(--success); margin-right: 6px;"></i>${feature}</li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+    }
 
     // --- අලුතින් එකතු කරපු BACK බටන් එක ---
     const backButtonHtml = `
@@ -7856,6 +7956,8 @@ function viewProduct(productId) {
             <p class="product-description">${product.description}</p>
             
             ${colorsHtml}
+            
+            ${sizesAndFeaturesHtml}
             
             <div class="quantity-selector">
                 <label>Quantity:</label>
