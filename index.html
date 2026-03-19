@@ -1716,9 +1716,264 @@ ul {
     font-size: 0.6rem;
 }
 
-/* ===== Privacy Policy Page - Accordion Style ===== */
+/* ===== Policy Pages - Modern Design ===== */
+.policy-page {
+    min-height: 60vh;
+}
+
+.policy-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: var(--radius-xl);
+    padding: 60px 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.policy-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.policy-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(249,168,212,0.2);
+    border-radius: 50%;
+}
+
+.policy-hero-icon {
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    position: relative;
+    border: 3px solid rgba(255,255,255,0.3);
+}
+
+.policy-hero-icon i {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.policy-hero h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+}
+
+.policy-hero p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    position: relative;
+    line-height: 1.7;
+}
+
+.policy-meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.policy-meta span {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius-full);
+}
+
+.policy-meta i {
+    color: var(--pink);
+}
+
+/* Policy Accordion */
+.policy-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.policy-accordion .accordion-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-100);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.policy-accordion .accordion-item:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    border-color: var(--primary-light);
+}
+
+.policy-accordion .accordion-item.active {
+    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(124, 58, 237, 0.15);
+}
+
+.policy-accordion .accordion-header {
+    width: 100%;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: left;
+}
+
+.policy-accordion .accordion-header:hover {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(249, 168, 212, 0.03));
+}
+
+.policy-accordion .accordion-item.active .accordion-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+
+.policy-accordion .accordion-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.policy-accordion .accordion-item.active .accordion-number {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.policy-accordion .accordion-title {
+    flex: 1;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gray-800);
+}
+
+.policy-accordion .accordion-item.active .accordion-title {
+    color: var(--white);
+}
+
+.policy-accordion .accordion-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.policy-accordion .accordion-item.active .accordion-icon {
+    color: var(--white);
+    transform: rotate(180deg);
+}
+
+.policy-accordion .accordion-content {
+    padding: 0 30px 25px 30px;
+    display: none;
+}
+
+.policy-accordion .accordion-item.active .accordion-content {
+    display: block;
+}
+
+.policy-accordion .accordion-content p {
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.policy-accordion .feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.policy-accordion .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-700);
+}
+
+.policy-accordion .feature-list li:last-child {
+    border-bottom: none;
+}
+
+.policy-accordion .feature-list i {
+    color: var(--primary);
+    margin-top: 4px;
+}
+
+/* Contact CTA in policy pages */
+.policy-cta {
+    background: linear-gradient(135deg, var(--gray-50), var(--off-white));
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid var(--gray-200);
+}
+
+.policy-cta i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.policy-cta-content h4 {
+    font-size: 1.1rem;
+    color: var(--gray-800);
+    margin-bottom: 5px;
+}
+
+.policy-cta-content p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Legacy styles - kept for compatibility */
 .privacy-hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     border-radius: var(--radius-xl);
     padding: 50px 40px;
     text-align: center;
@@ -2212,13 +2467,42 @@ ul {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .privacy-hero {
-        padding: 30px 20px;
+    .policy-hero {
+        padding: 40px 25px;
     }
     
-    .privacy-hero h2 {
-        font-size: 1.4rem;
+    .policy-hero h2 {
+        font-size: 1.8rem;
     }
+    
+    .policy-hero-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .policy-hero-icon i {
+        font-size: 2.5rem;
+    }
+    
+    .policy-meta {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .policy-accordion .accordion-header {
+        padding: 20px;
+    }
+    
+    .policy-accordion .accordion-number {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .policy-accordion .accordion-title {
+        font-size: 1rem;
+    }
+}
     
     .privacy-meta {
         flex-direction: column;
@@ -5772,7 +6056,7 @@ ul {
             </div>
         </section>
 
-        <section class="page" id="page-privacy">
+        <section class="page policy-page" id="page-privacy">
     <div class="page-header">
         <div class="container">
             <h1>Privacy Policy</h1>
@@ -5783,20 +6067,20 @@ ul {
     </div>
     <div class="container section">
         <!-- Privacy Policy Hero -->
-        <div class="privacy-hero">
-            <div class="privacy-hero-icon">
+        <div class="policy-hero">
+            <div class="policy-hero-icon">
                 <i class="fas fa-user-shield"></i>
             </div>
             <h2>Your Privacy Matters to Us</h2>
             <p>We are committed to protecting your personal information and your right to privacy. This policy outlines how we collect, use, and safeguard your data.</p>
-            <div class="privacy-meta">
+            <div class="policy-meta">
                 <span><i class="fas fa-calendar-alt"></i> Last Updated: March 2026</span>
                 <span><i class="fas fa-envelope"></i> Questions? Contact us at lavindra.lk@gmail.com</span>
             </div>
         </div>
         
         <!-- Privacy Accordion -->
-        <div class="privacy-accordion">
+        <div class="policy-accordion">
             
             <div class="accordion-item">
                 <button class="accordion-header">
@@ -6070,6 +6354,128 @@ ul {
     </div>
 </section>
 
+        <!-- ========== REFUND & RETURN POLICY PAGE ========== -->
+        <section class="page policy-page" id="page-refund">
+    <div class="page-header">
+        <div class="container">
+            <h1>Refund & Return Policy</h1>
+            <div class="breadcrumb">
+                <a href="#" data-page="home">Home</a> <i class="fas fa-chevron-right"></i> <span>Refund & Return Policy</span>
+            </div>
+        </div>
+    </div>
+    <div class="container section">
+        <div class="policy-hero">
+            <div class="policy-hero-icon">
+                <i class="fas fa-undo-alt"></i>
+            </div>
+            <h2>Easy Returns & Refunds</h2>
+            <p>We want you to be completely satisfied with your purchase. If you're not happy with your order, we make it easy to return or exchange items.</p>
+            <div class="policy-meta">
+                <span><i class="fas fa-calendar-alt"></i> Last Updated: March 2026</span>
+            </div>
+        </div>
+        <div class="policy-accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">01</span>
+                    <span class="accordion-title">Return Eligibility</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>You may return most items within 7 days of delivery for a full refund. Items must be unused, in original packaging, and accompanied by receipt.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">02</span>
+                    <span class="accordion-title">Refund Process</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Once we receive your returned item, we will inspect it and notify you. Refunds are processed within 5-7 business days to your original payment method.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">03</span>
+                    <span class="accordion-title">Damaged or Defective Items</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>If you receive a damaged or defective item, contact us within 48 hours with photos. We'll arrange free return shipping and full refund or replacement.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- ========== TERMS & CONDITIONS PAGE ========== -->
+        <section class="page policy-page" id="page-terms">
+    <div class="page-header">
+        <div class="container">
+            <h1>Terms & Conditions</h1>
+            <div class="breadcrumb">
+                <a href="#" data-page="home">Home</a> <i class="fas fa-chevron-right"></i> <span>Terms & Conditions</span>
+            </div>
+        </div>
+    </div>
+    <div class="container section">
+        <div class="policy-hero">
+            <div class="policy-hero-icon">
+                <i class="fas fa-gavel"></i>
+            </div>
+            <h2>Terms & Conditions</h2>
+            <p>Please read these terms and conditions carefully before using our website.</p>
+            <div class="policy-meta">
+                <span><i class="fas fa-calendar-alt"></i> Last Updated: March 2026</span>
+            </div>
+        </div>
+        <div class="policy-accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">01</span>
+                    <span class="accordion-title">Acceptance of Terms</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>By accessing and using the Lavindra website, you accept and agree to be bound by these terms and conditions.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">02</span>
+                    <span class="accordion-title">Orders & Pricing</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>All orders are subject to availability. Prices are subject to change without notice. We reserve the right to cancel orders for any reason.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">03</span>
+                    <span class="accordion-title">Shipping & Delivery</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Delivery times are estimates and not guaranteed. Shipping is available within Sri Lanka only. Orders are processed within 1-3 business days.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">04</span>
+                    <span class="accordion-title">Governing Law</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>These terms are governed by the laws of Sri Lanka. Any disputes will be resolved in Sri Lankan courts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     </main>
 
     <!-- Footer -->
@@ -6115,6 +6521,8 @@ ul {
                             <li><a href="#" data-page="about"><i class="fas fa-chevron-right"></i> About Us</a></li>
                             <li><a href="#" data-page="contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                             <li><a href="#" data-page="privacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                            <li><a href="#" data-page="refund"><i class="fas fa-chevron-right"></i> Refund & Return Policy</a></li>
+                            <li><a href="#" data-page="terms"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -6298,7 +6706,7 @@ ul {
         isNew: false
      },
 
-    { id: 15, name: "Pre-School Backpack - Cartoon", category: "bags", subcategory: "pre-school-bags", price: 1400, originalPrice: 1800, image: ["images/preschool-backpack.jpg"], rating: 4.7, reviews: 134, badge: "hot", description: "Cute cartoon pre-school backpack. Lightweight and perfect for little ones.", inStock: true, isNew: false },
+    { id: 15, name: "48 Wholesale Men's Slipper Summer Stripes Design", category: "shoes", subcategory: "men-sandals", price: 1990, originalPrice: 2000, image: ["blue line.png","red line.png"],sizes: [{name: "40", price: 1990}, {name: "41", price: 1990}, {name: "42", price: 1990}, {name: "43", price: 1990}, {name: "44", price: 1990}, {name: "45", price: 2100}], colors: [{ name: "Red", code: "#EF4444", image: "red line.png" },{ name: "Blue", code: "#3B82F6", image: "blue line.png" }], rating: 4.7, reviews: 134, badge: "hot", description: "Step into summer style with our premium Men's Slipper Summer Stripes Design! Crafted for ultimate comfort and casual elegance, these slippers feature a sleek striped pattern that adds a touch of modern sophistication to your relaxed look. Made from high-quality, breathable materials that keep your feet cool and comfortable during hot summer days. The soft cushioned insole provides excellent support, while the durable outsole ensures reliable grip on any surface. Perfect for indoor relaxation, poolside lounging, or casual outdoor activities. Available in classic colors that complement any summer outfit.", inStock: true, isNew: false, keyFeatures: ["Premium Stripes Design: Modern striped pattern for stylish look", "Breathable Materials: Keeps feet cool and comfortable", "Cushioned Insole: Excellent support for all-day comfort", "Durable Outsole: Reliable grip on any surface", "Versatile Use: Perfect for indoor, poolside, or outdoor", "Easy Care: Simple to clean and maintain"] },
     { id: 16, name: "Pre-School Mini Bag", category: "bags", subcategory: "pre-school-bags", price: 1800, originalPrice: 2200, image: "images/preschool-mini-bag.jpg", rating: 4.5, reviews: 98, badge: "", description: "Adorable mini bag for pre-schoolers. Soft material with adjustable straps.", inStock: true, isNew: true },
 
     // BOOKS
@@ -6816,6 +7224,7 @@ ul {
         { name: "Grade 03", price: 1800 }
     ]
 },
+{ id: 72, name: "Jordan Jumpman Men's Slides", category: "shoes", subcategory: "men-sandals", price: 2290, originalPrice: 2500, image: ["black ball.png","ball.png","ball 01.png"],sizes: [{name: "40", price: 2290}, {name: "41", price: 2290}, {name: "42", price: 2290}, {name: "43", price: 2290}, {name: "44", price: 2290}, {name: "45", price: 2290}], colors: [{ name: "Red", code: "#EF4444" },{ name: "Blue", code: "#3B82F6" },{ name: "Black", code: "#000000" }], rating: 4.7, reviews: 134, badge: "hot", description: "Experience legendary Jordan style with our authentic Jordan Jumpman Men's Slides! These premium slides combine the iconic Jumpman branding with unmatched comfort for the ultimate casual footwear experience. Perfect for athletes, sneakerheads, and fashion-forward individuals who want to showcase their love for the Jordan brand. The contoured footbed provides exceptional comfort, molding to your foot for personalized support, while the durable outsole delivers reliable traction. Whether you're hitting the gym, lounging by the pool, or running casual errands, these slides make a bold statement. The sleek design features the famous Jumpman logo prominently, ensuring you stand out from the crowd. Made with premium materials that are built to last, these slides offer exceptional value for anyone seeking luxury casual footwear.", inStock: true, isNew: false, keyFeatures: ["Iconic Jumpman Logo: Bold branding for authentic Jordan style", "Contoured Footbed: Personalized comfort that molds to your foot", "Premium Materials: High-quality construction for durability", "Versatile Design: Perfect for gym, pool, or casual outings", "Multiple Sizes: Available from size 40-45", "Available Colors: Classic Red and Blue options"] },
 
 
 
@@ -7004,8 +7413,24 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     updateWishlistUI();
     
-    // Show home page by default
-    navigateTo('home');
+    // Handle URL hash on page load
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+        navigateTo(hash);
+    } else {
+        // Show home page by default
+        navigateTo('home');
+    }
+    
+    // Handle hash changes
+    window.addEventListener('hashchange', () => {
+        const newHash = window.location.hash.slice(1);
+        if (newHash) {
+            navigateTo(newHash);
+        } else {
+            navigateTo('home');
+        }
+    });
 });
 
 // ===== Privacy Policy Accordion =====
@@ -8110,6 +8535,13 @@ function toggleMobileFilter() {
 // Pages මාරු කරන Function එක (අලුත් කරපු �ක)
 function navigateTo(pageId) {
     console.log('Navigating to:', pageId);
+    
+    // Update URL hash without scrolling
+    if (pageId && pageId !== 'home') {
+        history.pushState(null, null, '#' + pageId);
+    } else if (pageId === 'home') {
+        history.pushState(null, null, window.location.pathname);
+    }
     
     // තියෙන ඔක්කොම pages hide කරනවා
     document.querySelectorAll('.page').forEach(page => {
